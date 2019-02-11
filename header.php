@@ -90,10 +90,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
 	<?php $slider = get_posts(array('post_type' => 'slider', 'posts_per_page' => 5)); ?>
-	<?php $startslide = rand(0, count($slider) - 1); ?>
       <?php $count = 0; ?>
       <?php foreach($slider as $slide): ?>
-      <div class="carousel-item <?php echo ($count == $startslide) ? 'active' : ''; ?>" style="background-image: url('<?php echo wp_get_attachment_url( get_post_thumbnail_id($slide->ID)) ?>');">
+      <div class="carousel-item <?php echo ($count == 0) ? 'active' : ''; ?>" style="background-image: url('<?php echo wp_get_attachment_url( get_post_thumbnail_id($slide->ID)) ?>');">
       </div>
       <?php $count++; ?>
     <?php endforeach; ?>
@@ -110,5 +109,21 @@ $container = get_theme_mod( 'understrap_container_type' );
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<script>
+if (document.getElementById('carouselExampleControls')) {
+	var slides = document.getElementById('carouselExampleControls').getElementsByClassName('carousel-item');
+	if (slides.length > 0) {
+		var startSlide = Math.floor(Math.random() * slides.length);
+		for (var i = 0; i < slides.length; i++) {
+			if (i === startSlide) {
+				slides[i].classList.add('active');
+			} else {
+				slides[i].classList.remove('active');
+			}
+		}
+	}
+}
+</script>
 
 <?php endif; ?>
