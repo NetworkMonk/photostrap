@@ -181,8 +181,12 @@ html,body,p {
 .navbar-brand {
     font-family: 'Alegreya Sans', sans-serif;
     text-transform: uppercase;
-    margin-left: 2rem;
-    
+    margin-left: 1rem;
+}
+@media (min-width: 992px) {
+    .navbar-brand {
+        margin-left: 2rem;
+    }
 }
 
 /*img.wp-post-image
