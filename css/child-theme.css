@@ -11675,7 +11675,8 @@ body.admin-bar .navbar.fixed-top {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 4rem;
   color: #fff;
-  min-height: 12rem; }
+  min-height: 12rem;
+  line-height: normal; }
 
 .project-item .project-excerpt {
   font-family: 'Fira Sans Condensed', sans-serif;
